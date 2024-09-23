@@ -1,0 +1,33 @@
+{
+  "name": "social-app",
+  "version": "1.0.0",
+  "description": "Web application for social interactions between unfamiliar groups of people",
+  "main": "server.js",
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MikhailMurashkin/social-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MikhailMurashkin/social-app/issues"
+  },
+  "homepage": "https://github.com/MikhailMurashkin/social-app#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.6.3",
+    "shortid": "^2.2.16"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
