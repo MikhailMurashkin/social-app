@@ -2,6 +2,8 @@ import React, { useContext, useState } from 'react';
 import { createRoom } from '../api';
 import { AuthContext } from '../authContext';
 import { useNavigate } from 'react-router-dom';
+import { ArrowLeftCircleFill } from 'react-bootstrap-icons';
+import '../style/App.css';
 
 const CreateRoom = () => {
   const { user } = useContext(AuthContext);
@@ -21,15 +23,23 @@ const CreateRoom = () => {
 
   return (
     <form onSubmit={handleCreateRoom}>
-      <h2>Create a Room</h2>
-      <input
-        type="text"
-        value={roomName}
-        onChange={(e) => setRoomName(e.target.value)}
-        placeholder="Room Name"
-        required
-      />
-      <button type="submit">Create Room</button>
+      <div className="createRoom">
+        <div className='backButton'>
+          <ArrowLeftCircleFill width='28' height='28' color='rgb(40,40,40)' 
+          onClick={() => navigate('/rooms')} style={{cursor: 'pointer'}} />
+        </div>
+        <div className="title">Новая комната</div>
+        <input
+          className="basicInput"
+          style={{width: '50%', height: '28px'}}
+          type="text"
+          value={roomName}
+          onChange={(e) => setRoomName(e.target.value)}
+          placeholder="Название комнаты"
+          required
+        />
+        <button className="basicButton" type="submit">Создать</button>
+      </div>
     </form>
   );
 };

@@ -65,7 +65,7 @@ input, button {
   border: 2px solid rgb(40, 40, 40);
   border-radius: 5px;
   width: 100%;
-  height: 20px;
+  height: 24px;
 }
 
 .inputs {
@@ -132,4 +132,35 @@ input, button {
   gap: 20px;
   flex-wrap: wrap;
   padding: 40px;
+}
+
+.createRoom, .joinRoom {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  align-items: center;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.backButton {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  position: fixed;
+}
+
+.wrongCode {
+  color: red;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.codeInput {
+  width: 200px;
+  height: 44px;
 }
