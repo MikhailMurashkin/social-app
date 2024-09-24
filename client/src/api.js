@@ -125,3 +125,69 @@ export const leaveRoom = async (token, roomId) => {
   });
   if (!response.ok) throw new Error('Ошибка при выходе из комнаты');
 };
+
+export const saveRoomDescription = async (roomId, token, description) => {
+  const response = await fetch(`${API_URL}/rooms/${roomId}/description`, {
+    method: 'PUT',
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ description }),
+  });
+
+  if (!response.ok) {
+    throw new Error('Не удалось сохранить описание комнаты');
+  }
+
+  return await response.json();
+};
+
+
+export const startGroupSearch = async (roomId, token) => {
+  const response = await fetch(`${API_URL}/rooms/${roomId}/search`, {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error('Не удалось начать поиск группы');
+  }
+
+  return await response.json();
+};
+
+export const acceptGroupMatch = async (matchId, roomId, token) => {
+  const response = await fetch(`${API_URL}/rooms/${matchId}/${roomId}/accept`, {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error('Не удалось принять общение');
+  }
+
+  return await response.json();
+};
+
+export const declineGroupMatch = async (matchId, roomId, token) => {
+  const response = await fetch(`${API_URL}/rooms/${matchId}/${roomId}/decline`, {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error('Не удалось отклонить общение');
+  }
+
+  return await response.json();
+};

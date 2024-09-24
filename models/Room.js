@@ -21,7 +21,14 @@ const roomSchema = new mongoose.Schema({
   allowNewParticipants: {
     type: Boolean,
     default: true,
-  }
+  },
+  description: {
+    type: String
+  },
+  searching: {
+    type: Boolean,
+    default: false
+  },
 }, { timestamps: true });
 
 const Room = mongoose.model('Room', roomSchema);
