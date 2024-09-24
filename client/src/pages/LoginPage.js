@@ -1,14 +1,14 @@
 import React from 'react';
 import LoginForm from '../components/LoginForm';
 import { useNavigate } from 'react-router-dom';
+import '../style/App.css';
 
 const LoginPage = () => {
   const navigate = useNavigate();
   return (
-    <div>
-      <h1>Login Page</h1>
+    <div className="loginPage">
       <LoginForm />
-      <button onClick={()=>navigate('/register')}>Don't have an account?</button>
+      <button className="loginButton" onClick={()=>navigate('/register')}>Нет аккаунта?</button>
     </div>
   );
 };

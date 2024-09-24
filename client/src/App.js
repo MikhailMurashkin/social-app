@@ -9,6 +9,9 @@ import CreateRoom from './components/CreateRoom';
 import JoinRoom from './components/JoinRoom';
 import RoomPage from './components/RoomPage';
 import PrivateRoute from './routes/PrivateRoute';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 
 
 const App = () => {

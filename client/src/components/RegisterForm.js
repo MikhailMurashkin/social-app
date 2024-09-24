@@ -19,7 +19,7 @@ const RegisterForm = () => {
     e.preventDefault();
     try {
       const data = await register(name, email, password);
-      window.location = '/rooms'
+      navigate('/rooms')
     } catch (error) {
       console.error('Registration error:', error.message);
     }
@@ -27,11 +27,15 @@ const RegisterForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Register</h2>
-      <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} required />
-      <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-      <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-      <button type="submit">Register</button>
+      <div className="loginForm">
+      <div className="title">Регистрация</div>
+      <div className="inputs">
+        <input className="basicInput" type="text" placeholder="Имя" value={name} onChange={(e) => setName(e.target.value)} required />
+        <input className="basicInput" type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+        <input className="basicInput" type="password" placeholder="Пароль" value={password} onChange={(e) => setPassword(e.target.value)} required />
+        <button className="basicButton" type="submit">Зарегистрироваться</button>
+      </div>
+      </div>
     </form>
   );
 };

@@ -6,10 +6,9 @@ const RegisterPage = () => {
   const navigate = useNavigate();
 
   return (
-    <div>
-      <h1>Register Page</h1>
+    <div className="registerPage">
       <RegisterForm />
-      <button onClick={()=>navigate('/login')}>Already have an account?</button>
+      <button className="loginButton" onClick={()=>navigate('/login')}>Уже есть аккаунт?</button>
     </div>
   );
 };

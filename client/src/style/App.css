@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .App-logo {
@@ -35,4 +36,100 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+input, button {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+.loginForm {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  text-align: center;
+  align-items: center;
+}
+
+.title {
+  padding-top: 80px;
+  font-size: 24px;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+}
+
+.basicInput {
+  border: 2px solid rgb(40, 40, 40);
+  border-radius: 5px;
+  width: 100%;
+  height: 20px;
+}
+
+.inputs {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  align-items: center;
+}
+
+.basicButton {
+  color: whitesmoke;
+  background-color: rgb(40, 40, 40);
+  border: 2px solid rgb(40, 40, 40);
+  border-radius: 10px;
+  width: fit-content;
+  padding: 5px 10px 5px 10px;
+  cursor: pointer;
+}
+
+.loginPage, .registerPage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.loginButton {
+  color: black;
+  background: none;
+  border: none;
+  font-size: 14px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.roomList {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.roomCard {
+  text-align: center;
+  cursor: pointer;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.roomButton {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.roomCards {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 40px;
 }

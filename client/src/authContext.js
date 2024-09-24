@@ -84,6 +84,7 @@ const AuthProvider = ({ children }) => {
         localStorage.setItem('token', data.token);
         setToken(data.token)
         setUser(data.user);
+        console.log("registering", data.user)
         navigate('/rooms');
       } else {
         const errorData = await response.json();

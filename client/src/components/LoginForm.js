@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import { loginUser } from '../api';
 import {AuthContext} from '../authContext';
 import { useNavigate } from 'react-router-dom';
+import '../style/App.css';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('varya@email.com');
@@ -12,7 +13,7 @@ const LoginForm = () => {
   useEffect(() => {
     if(localStorage.getItem('token')) {
       console.log("useEFF")
-      // navigate('/')
+      navigate('/rooms')
     }
   })
 
@@ -27,11 +28,15 @@ const LoginForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Login</h2>
-      <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-      <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-      <button type="submit">Login</button>
-    </form>
+    <div className="loginForm">
+      <div className="title">Вход в аккаунт</div>
+      <div className="inputs">
+        <input className="basicInput" type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+        <input className="basicInput" type="password" placeholder="Пароль" value={password} onChange={(e) => setPassword(e.target.value)} required />
+      <button className="basicButton" type="submit">Войти</button>
+      </div>
+      </div>
+  </form>
   );
 };
 
